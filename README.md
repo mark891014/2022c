@@ -99,3 +99,83 @@ int main()
     if("a==0")printf("不管什麼幾乎都成立\n");
 }
 ```
+# week 07
+##step01
+int,long long int的差別
+```cpp
+#include <stdio.h>
+int main()
+{
+    int n=1234567812345678;
+    printf("int最大32-bit:%d\n\n",n);///最大32-bit
+    long long int a=1234567812345678;
+    printf("long long int最大64-bit:%lld\n",a);///最大64-bit
+}
+```
+##step02
+暴力破解最大公因數
+```cpp
+#include <stdio.h>
+int main()
+{
+    long long int a,b,ans;
+    scanf("%lld%lld",&a,&b);
+    for(long long int i=1;i<=a;i++)
+    {
+        if(a%i==0&&b%i==0)
+            ans=i;
+    }
+    printf("最大公因數是:%lld\n\n",ans);///算很慢
+}
+```
+##step03
+輾轉相除法得最大公因數
+```cpp
+#include <stdio.h>
+int main()
+{
+    long long int a,b,c;
+    scanf("%lld%lld",&a,&b);
+    while(1)
+    {
+        c=a%b;
+        printf("%lld %lld %lld\n",a,b,c);
+        if(c==0) break;
+        a=b;
+        b=c;
+    }
+    printf("\n輾轉相除法\n得最大公因數:%lld\n",b);
+}
+```
+##step04
+剝皮法求個位數
+```cpp
+#include <stdio.h>
+int main()
+{
+    int n=123456789;
+    while(n>0)
+    {
+        printf("個位數是:%d\n",n%10);
+        n=n/10;
+    }
+}
+```
+##step04-2
+10進轉2進(從下往上看)
+```cpp
+#include <stdio.h>
+int main()
+{
+    printf("請輸入數字: ");
+    int n;
+    scanf("%d",&n);
+    while(n>0)
+    {
+
+        printf("%d\n",n%2);
+        n=n/2;
+    }
+    printf("從下往上看");
+}
+```
