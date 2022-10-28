@@ -179,3 +179,96 @@ int main()
     printf("從下往上看");
 }
 ```
+# week 08
+##step01
+只有2個for迴圈+if印出三角形
+```cpp
+#include <stdio.h>
+int main()
+{
+    int n;
+    scanf("%d",&n);
+
+    for(int i=1;i<=n;i++)
+    {
+        for(int j=1;j<=n;j++)
+        {
+            if(j<=n-i)
+                printf(" ");
+            else
+                printf("*");
+        }
+        printf("\n");
+    }
+}
+```
+##step02
+使用2個while迴圈, 去寫出有空格、有星星的直角三角形
+```cpp
+#include <stdio.h>
+int main()
+{
+    int n;
+    scanf("%d",&n);
+
+    int i=1;
+    while(i<=n)
+    {
+        int k=1;
+        while(k<=n)
+        {
+            if(k<=n-i)
+                printf(" ");
+            else
+                printf("*");
+            k++;
+        }
+        printf("\n");
+        i++;
+    }
+}
+```
+##step03
+for判斷質數
+```cpp
+#include <stdio.h>
+int main()
+{
+    printf("判斷此數是否是質數:");
+    int n;
+    scanf("%d",&n);
+
+    int bad=0;
+    for(int i=2;i<n;i++)
+    {
+        if(n%i==0)
+            bad=1;
+    }
+    if(bad==0)
+        printf("%d 是質數(沒有壞掉)",n);
+    else
+        printf("%d 不是質數(壞掉了)",n);
+}
+```
+##step04
+瘋狂程設 判斷質數
+```cpp
+#include <stdio.h>
+int main()
+{
+	int a;
+	scanf("%d",&a);
+
+	for(int n=2;n<=a;n++)
+	{
+		int bad=0;
+		for(int i=2;i<n;i++)
+		{
+			if(n%i==0)
+				bad=1;
+		}
+		if(bad==0)
+			printf("%d ",n);
+	}
+}
+```
