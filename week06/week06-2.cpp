@@ -7,12 +7,12 @@ int main()
         int star=i*2-1;
         for(int k=0;k<space;k++)
         {
-            printf("");
+            printf(" ");
         }
     for(int k=0;k<star;k++)
     {
-        printf("");
+        printf("*");
     }
-    printf("ÆN¬[:%d¼Ó %dªÅ®æ %d¬P\n",i,space,star);
+    printf("Ã†NÂ¬[:%dÂ¼Ã“ %dÂªÃ…Â®Ã¦ %dÂ¬P\n",i,space,star);
     }
 }
