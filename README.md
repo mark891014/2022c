@@ -27,11 +27,11 @@ int main()
         int star=i*2-1;
         for(int k=0;k<space;k++)
         {
-            printf("");
+            printf(" ");
         }
     for(int k=0;k<star;k++)
     {
-        printf("");
+        printf("*");
     }
     printf("鷹架:%d樓 %d空格 %d星\n",i,space,star);
     }
