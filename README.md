@@ -302,3 +302,135 @@ int main()
             printf("%d ",a[i]);
         }
 }
+# week 11
+## step01
+將3個數字從小到大排好時,我們需要一個技巧-交換
+```cpp
+#include <stdio.h>
+int main()
+{
+    int a=90,b=80;
+    printf("a:%d b:%d\n",a,b);
+
+    int temp=a;
+    a=b;
+    b=temp;
+
+    printf("a:%d b:%d\n",a,b);
+}
+```
+##step02
+三數排序的部分,使用的口訣是「比大小,不對就交換」
+```cpp
+#include <stdio.h>
+int main()
+{
+    int a=90,b=80,c=70;
+    if(a>b){
+        int temp=a;
+        a=b;
+        b=temp;
+    }
+    if(b>c){
+    int temp=b;
+    b=c;
+    c=temp;
+    }
+    if(a>b){
+    int temp=a;
+    a=b;
+    b=temp;
+    }
+    printf("a:%d b:%d c:%d\n",a,b,c);
+}
+```
+##step03
+「從左到右巡一輪,兩兩比較,不對就交換」
+```cpp
+///口訣: 從左到右巡一輪，兩兩比較，不對就交換
+#include <stdio.h>
+int a[10]={90,80,70,60,50,40,30,20,10,0};
+
+int main()
+{
+    for(int i=0;i<10;i++) printf("%d ",a[i]);
+    printf("\n");
+
+    for(int i=0;i<10;i++){
+        if(a[i]>a[i+1]){///希望左小又大，但不對...
+            int temp=a[i];///不對就交換
+            a[i]=a[i+1];
+            a[i+1]=temp;
+        }
+    }
+    for(int i=0;i<10;i++) printf("%d ",a[i]);
+    printf("\n");
+}
+```
+##step04
+前面的程式,只把「最肥的數字」移到右邊,因此,我們就用 Ctrl-C 的方法 貼很多次, 並逐一印出來
+```cpp
+///口訣: 從左到右巡一輪，兩兩比較，不對就交換
+#include <stdio.h>
+int a[10]={90,80,70,60,50,40,30,20,10,0};
+
+int main()
+{
+    for(int i=0;i<10;i++) printf("%d ",a[i]);
+    printf("\n");
+
+    for(int i=0;i<10-1;i++){///巡一輪
+        if(a[i]>a[i+1]){///希望左小又大，但不對...
+            int temp=a[i];///不對就交換
+            a[i]=a[i+1];
+            a[i+1]=temp;
+        }
+    }
+    for(int i=0;i<10;i++) printf("%d ",a[i]);
+    printf("\n");
+
+    for(int i=0;i<10-1;i++){///巡一輪
+        if(a[i]>a[i+1]){///希望左小又大，但不對...
+            int temp=a[i];///不對就交換
+            a[i]=a[i+1];
+            a[i+1]=temp;
+        }
+    }
+    for(int i=0;i<10;i++) printf("%d ",a[i]);
+    printf("\n");
+
+    for(int i=0;i<10-1;i++){///巡一輪
+        if(a[i]>a[i+1]){///希望左小又大，但不對...
+            int temp=a[i];///不對就交換
+            a[i]=a[i+1];
+            a[i+1]=temp;
+        }
+    }
+    for(int i=0;i<10;i++) printf("%d ",a[i]);
+    printf("\n");
+}
+```
+##step05
+泡泡排序法bubble sort
+```cpp
+#include <stdio.h>
+int a[10]={90,80,70,60,50,40,30,20,10,0};
+
+int main()
+{
+    for(int i=0;i<10;i++) printf("%d ",a[i]);
+    printf("\n");
+
+    for(int k=0;k<10;k++){
+        for(int i=0;i<10-1;i++){///巡一輪
+            if(a[i]>a[i+1]){///希望左小又大
+                int temp=a[i];///不對就交換
+                a[i]=a[i+1];
+                a[i+1]=temp;
+            }
+        }
+        for(int i=0;i<10;i++) printf("%d ",a[i]);
+        printf("\n");
+    }
+}
+```
