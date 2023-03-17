@@ -1,26 +1,18 @@
-#include <stdio.h>
-#include <string.h>
-char mirrored_char(char c)
-{
-    char line1[]="ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
-    char line2[]="A   3  HIL JMO    2TUVWXY51SE Z  8 ";
-    for(int i=0;line1[i]!=0;i++){
-        if(line1[i]==c) return line2[i];
-    }
-    return ' ';
-}
+#include<stdio.h>
+
 int main()
 {
-    char line[30];
-    scanf("%s",line);
+    int a=10,b=20;
+    int *p1,*p2;
+    printf("a:%d b:%d\n",a,b);
 
-    int N=strlen(line);
-    int bad=0;
-    for(int i=0;i<N;i++){
-        char c1=line[i];
-        char c2=mirrored_char(line[N-1-i]);
-        if(c1!=c2) bad=1;
-    }
-    if(bad==0)printf("它是鏡像字\n");
-    else printf("它不是鏡像字\n");
+    p1 = &a;
+    *p1 = 99;
+    printf("a:%d b:%d\n",a,b);
+
+    p2 = p1;
+    *p2 = 77;
+    printf("a:%d b:%d\n",a,b);
 }
+
+

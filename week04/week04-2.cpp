@@ -1,16 +1,12 @@
-#include <stdio.h>
-#include <string.h>
+#include<stdio.h>
+
 int main()
 {
-	char line[30];
+    int a=10;
+    printf("a在哪裡? %d\n",&a);
 
-	scanf("%s",line);
-
-	int N=strlen(line);
-	int bad=0;
-	for(int i=0;i<N;i++){
-        if(line[i]!=line[N-1-i])bad=1;
-	}
-	if(bad==1) printf("它不是迴文\n");
-	else printf("它是迴文\n");
+    int *p = &a;
+    printf("指標p心裡放的是&a 也就是%d\n",p);
+    printf("p指到的那一個盒子的值是:%d\n",*p);
 }
+
